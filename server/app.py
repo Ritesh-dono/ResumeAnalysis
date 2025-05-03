@@ -6,7 +6,9 @@ from parser import extract_text_from_pdf, extract_info
 from matcher import calculate_match_score
 
 app = Flask(__name__)
-CORS(app)
+
+CORS(app, origins=["https://tangerine-cocada-b08698.netlify.app"])
+
 
 @app.route('/analyze', methods=['POST'])
 def analyze_resume():
