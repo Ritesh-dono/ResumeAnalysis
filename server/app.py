@@ -7,7 +7,7 @@ from matcher import calculate_match_score
 
 app = Flask(__name__)
 
-CORS(app, origins=["https://tangerine-cocada-b08698.netlify.app"])
+CORS(app, origins=["https://lustrous-malabi-505785.netlify.app"])
 
 
 @app.route('/analyze', methods=['POST'])
