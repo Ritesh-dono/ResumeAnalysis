@@ -16,7 +16,7 @@ const ResumeForm = ({ setResult }) => {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/analyze', formData);
+      const res = await axios.post('https://resumeanalysis-y0ax.onrender.com formData);
       setResult(res.data);
     } catch (err) {
       console.error(err);
