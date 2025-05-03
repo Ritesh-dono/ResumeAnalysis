@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
+
 from parser import extract_text_from_pdf, extract_info
 from matcher import calculate_match_score
 
@@ -29,5 +31,7 @@ def analyze_resume():
     }
     return jsonify(response)
 
+# Run only when not using Gunicorn or other WSGI servers
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
